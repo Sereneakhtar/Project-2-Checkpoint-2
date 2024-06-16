@@ -1,0 +1,16 @@
+import zipfile
+
+# Define the path to the zip file and the extraction directory
+zip_path = '/mnt/data/PJ02-PostedTestCasesAndMakefile.zip'
+extract_dir = '/mnt/data/PJ02_Project'
+
+# Create the extraction directory if it doesn't exist
+os.makedirs(extract_dir, exist_ok=True)
+
+# Extract the zip file
+with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    zip_ref.extractall(extract_dir)
+
+# List the contents of the extracted directory to see what we have
+extracted_files = os.listdir(extract_dir)
+extracted_files
